@@ -1,10 +1,22 @@
-import SideBar from '../components/SideBar'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Layout from './Layout'
+import { Overview, Notifications, TradeHistory } from '../pages/index'
 
 function App() {
   return (
-    <main className='h-screen bg max-h-screen flex'>
-      <SideBar />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Layout />} >
+          <Route index element={<Overview />} />
+        </Route>
+        <Route path='/dashboard/' element={<Layout />} >
+          <Route index element={<Overview />} />
+          <Route path='overview' element={<Overview />} />
+          <Route path='notifications' element={<Notifications />} />
+          <Route path='trade-history' element={<TradeHistory />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
