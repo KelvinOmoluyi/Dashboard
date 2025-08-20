@@ -1,7 +1,7 @@
 import { SearchBar } from "./index"
 import { MdNotificationsNone } from 'react-icons/md';
 import { MdOutlineAnalytics } from 'react-icons/md';
-import avatarImg from "../data/images/portfolio-about-pic.jpg"
+import avatarImg from "../data/images/my-pic.jpg"
 import { BsCalendar } from 'react-icons/bs';
 import { BsFilter } from 'react-icons/bs';
 import { Button } from '../components';
@@ -68,7 +68,7 @@ function NavBar() {
                       <BsFilter size={20} color="#b3b3b3" />
                       <h6>Filter</h6>
                   </div>
-                  <Button active={true} icon={BiShare} text="share" />
+                  <Button bgColor="#9061f6" icon={BiShare} text="share" />
               </div>
           </div>
           <div className='w-full h-1 bg-gray-900 rounded-2xl mt-2 mx-auto'>
