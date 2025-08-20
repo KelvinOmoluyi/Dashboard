@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useStateContext } from "../context/ContextProvider";
 import { BsThreeDots } from 'react-icons/bs';
 import { dashboardStats, countrySession, transactions } from "../data/index"
-import { Button, LineGraph } from "../components/index";
+import { Button, LineGraph, StatusIndicator } from "../components/index";
 import { BiDownload } from 'react-icons/bi';
 import { RiLoopLeftFill } from 'react-icons/ri';
 import { MdArrowDropDown } from 'react-icons/md';
@@ -106,7 +106,9 @@ const Overview = () => {
                             <div className="w-[60%] flex items-center">
                                 <td className="w-[20%]"><p>{transaction.amount}</p></td>
                                 <td className="w-[18%]"><p>{transaction.date}</p></td>
-                                <td className="w-[20%]"><p>{transaction.status}</p></td>
+                                <td className="w-[20%]">
+                                    <StatusIndicator status={transaction.status} />
+                                </td>
                                 <td className="w-[38%] flex gap-4">
                                     <img src={transaction.picture} alt="customer picture" style={{ height: "3rem", aspectRatio: "1/1", borderRadius: "50%" }} />
                                     <div>
