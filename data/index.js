@@ -10,7 +10,7 @@ import { FaWallet } from 'react-icons/fa';
 import { RiCoinsFill } from 'react-icons/ri';
 import { FaChartArea } from 'react-icons/fa';
 import americaFlag from "./images/americaFlag.jpg"
-import japanFlag from "./images/japanFlag.jpg"
+import japanFlag from "./images/JapanFlag.jpg"
 import koreaFlag from "./images/koreaFlag.webp"
 import germanyFlag from "./images/germanyFlag.png"
 import customerPic from "./images/my-pic.jpg"
