@@ -9,6 +9,10 @@ import { FaMoneyBillAlt } from 'react-icons/fa';
 import { FaWallet } from 'react-icons/fa';
 import { RiCoinsFill } from 'react-icons/ri';
 import { FaChartArea } from 'react-icons/fa';
+import americaFlag from "./images/americaFlag.jpg"
+import japanFlag from "./images/japanFlag.jpg"
+import koreaFlag from "./images/koreaFlag.webp"
+import germanyFlag from "./images/germanyFlag.png"
 
 export const sidebarData = [{
     properties: {
@@ -98,6 +102,33 @@ export const dashboardStats = [
         percentage: "25.43%",
         stat: "gain",
         comparison: "Compared to last month"
+    },
+]
+
+export const countrySession = [
+    {
+        id: 1,
+        country: "United States",
+        flag: americaFlag,
+        percentage: 85
+    },
+    {
+        id: 2,
+        country: "Japan",
+        flag: japanFlag,
+        percentage: 70
+    },
+    {
+        id: 3,
+        country: "Germany",
+        flag: germanyFlag,
+        percentage: 45
+    },
+    {
+        id: 4,
+        country: "South Korea",
+        flag: koreaFlag,
+        percentage: 33
     },
 ]
 
