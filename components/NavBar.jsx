@@ -46,7 +46,7 @@ function NavBar() {
         </div>
       </div>
 
-      <div>
+      <div className="mb-4">
           <div className='flex items-center justify-between'>
               <div className="flex gap-4 mt-4">
                   <Link to="/dashboard/overview">

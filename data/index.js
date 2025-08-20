@@ -5,6 +5,10 @@ import { MdOutlineAnalytics } from 'react-icons/md';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { RiFlowerLine } from 'react-icons/ri';
 import { FaLink } from 'react-icons/fa6';
+import { FaMoneyBillAlt } from 'react-icons/fa';
+import { FaWallet } from 'react-icons/fa';
+import { RiCoinsFill } from 'react-icons/ri';
+import { FaChartArea } from 'react-icons/fa';
 
 export const sidebarData = [{
     properties: {
@@ -56,6 +60,45 @@ export const neutralButton = [
         id: 1,
         text: "Upgrade now"
     }
+]
+
+export const dashboardStats = [
+    {
+        id: 1,
+        Icon: FaMoneyBillAlt,
+        desc: "Total income",
+        amount: "$342,261",
+        percentage: "17.01%",
+        stat: "gain",
+        comparison: "Compared to last month"
+    },
+    {
+        id: 2,
+        Icon: FaWallet,
+        desc: "Profit",
+        amount: "$15,708.98",
+        percentage: "8.12%",
+        stat: "gain",
+        comparison: "Compared to last month"
+    },
+    {
+        id: 3,
+        Icon: RiCoinsFill,
+        desc: "Total revenue",
+        amount: "7.415.644",
+        percentage: "17.01%",
+        stat: "loss",
+        comparison: "Compared to last month"
+    },
+    {
+        id: 4,
+        Icon: FaChartArea,
+        desc: "Total convertion",
+        amount: "10.87%",
+        percentage: "25.43%",
+        stat: "gain",
+        comparison: "Compared to last month"
+    },
 ]
 
 import logo from "./images/logo.png";
