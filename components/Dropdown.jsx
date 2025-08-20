@@ -19,7 +19,7 @@ const Dropdown = ({ icon, width, height, text, dropdownData }) => {
             className='w-full flex items-center justify-between pl-2 rounded-md'
             whileHover={{ backgroundColor: '#9061f6' }}
             >
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                     {icon && <Icon size={20} className='text-gray-300 hover:text-white' />}
                     <span>{text}</span>
                 </div>
