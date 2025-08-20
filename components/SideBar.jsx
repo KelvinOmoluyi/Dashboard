@@ -50,9 +50,9 @@ const SideBar = () => {
             ))}
           </div>
           <div className="w-full h-10 mt-3 flex justify-between items-center">
-            <div className="flex gap-3 h-full items-center">
-              <p>Dark mode</p>
+            <div className="flex gap-2 h-full items-center">
               <AiOutlineMoon size={20} className="text-gray-100" />
+              <p>Dark mode</p>
             </div>
             <Switch
               checked={enabled}
