@@ -48,15 +48,17 @@ function NavBar() {
 
       <div className="mb-4">
           <div className='flex items-center justify-between'>
-              <div className="flex gap-4 mt-4">
+              <div 
+              style={{ fontSize: "1rem", color: "#b3b3b3"}}
+              className="flex gap-4 mt-4">
                   <Link to="/dashboard/overview">
-                    <p>Overview</p>
+                    <span style={{ color: `${navbarIndicator === "overview" ? "#ececec" : ""}` }}>Overview</span>
                   </Link>
                   <Link to="/dashboard/notifications">
-                    <p>Notifications</p>
+                    <span style={{ color: `${navbarIndicator === "notifications" ? "#ececec" : ""}` }}>Notifications</span>
                   </Link>
                   <Link to="/dashboard/trade-history">
-                    <p>Trade history</p>
+                    <span style={{ color: `${navbarIndicator === "trade" ? "#ececec" : ""}` }}>Trade history</span>
                   </Link>
               </div>
               <div className='flex gap-2'>
