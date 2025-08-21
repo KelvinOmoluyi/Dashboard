@@ -7,13 +7,13 @@ const StatusIndicator = ({status}) => {
 
     useEffect(() => {
         if (status == "Processing") {
-            setIndicator("#FFA500")
+            setIndicator("#b3b3b3")
         }
         if (status == "Completed") {
             setIndicator("#16a34a")
         } 
         if (status == "Pending") {
-            setIndicator("#414141")
+            setIndicator("#FFA500")
         }
     })
 
@@ -22,7 +22,7 @@ const StatusIndicator = ({status}) => {
         style={{ color: indicator, backgroundColor: indicator+"31" }}
         className={`flex items-center p-[2px] pr-[10px] w-fit rounded-[30px]`}>
             <BsDot size={30} color="#ececec" />
-            <h6>{status}</h6>
+            <span style={{ fontSize: "0.8rem", fontWeight: 500 }}>{status}</span>
         </div>
     );
 }
