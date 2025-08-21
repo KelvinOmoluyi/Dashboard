@@ -234,7 +234,7 @@ export const notifications = [
     time: "2025-08-21T10:45:00Z",
     read: false,
     priority: "low",             // low | medium | high
-    cta: { label: "View logs", href: "/jobs/342/logs" }
+    cta: { label: "View logs", href: "#" }
   },
   {
     id: "n2",
@@ -244,7 +244,7 @@ export const notifications = [
     time: "2025-08-21T09:02:00Z",
     read: false,
     priority: "low",
-    cta: { label: "Download", href: "/billing/invoices/INV-2087" }
+    cta: { label: "Download", href: "#" }
   },
   {
     id: "n3",
@@ -254,7 +254,7 @@ export const notifications = [
     time: "2025-08-21T07:18:00Z",
     read: true,
     priority: "low",
-    cta: { label: "Open thread", href: "/projects/apexify/threads/91#c_553" }
+    cta: { label: "Open thread", href: "#" }
   },
   {
     id: "n4",
@@ -264,7 +264,7 @@ export const notifications = [
     time: "2025-08-20T18:30:00Z",
     read: false,
     priority: "medium",
-    cta: { label: "Review", href: "/dashboard/sessions/design" }
+    cta: { label: "Review", href: "#" }
   },
   {
     id: "n5",
@@ -274,7 +274,7 @@ export const notifications = [
     time: "2025-08-20T06:11:00Z",
     read: true,
     priority: "high",
-    cta: { label: "Secure account", href: "/security/sessions" }
+    cta: { label: "Secure account", href: "#" }
   },
   {
     id: "n6",
@@ -284,7 +284,7 @@ export const notifications = [
     time: "2025-08-19T21:04:00Z",
     read: true,
     priority: "low",
-    cta: { label: "Download", href: "/exports/transactions-aug.csv" }
+    cta: { label: "Download", href: "#" }
   },
   {
     id: "n7",
@@ -294,7 +294,7 @@ export const notifications = [
     time: "2025-08-18T15:25:00Z",
     read: false,
     priority: "medium",
-    cta: { label: "Investigate", href: "/analytics/queries/sales_estimation_v3" }
+    cta: { label: "Investigate", href: "#" }
   },
   {
     id: "n8",
@@ -304,7 +304,7 @@ export const notifications = [
     time: "2025-08-16T12:00:00Z",
     read: true,
     priority: "medium",
-    cta: { label: "View plan", href: "/billing/plan" }
+    cta: { label: "View plan", href: "#" }
   }
 ];
 
