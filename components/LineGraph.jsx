@@ -53,8 +53,8 @@ function externalTooltip(context) {
         return `
           <div class="tip-row">
             <span class="tip-bar" style="background:${color}"></span>
-            <span class="tip-label">${label}</span>
-            <span class="tip-value">${value}</span>
+            <span class="tip-label" style="font-family: helvetica;">${label}</span>
+            <span class="tip-value" style="font-family: helvetica;">${value}</span>
           </div>`;
       })
       .join("");
@@ -115,8 +115,8 @@ export default function DashboardLine() {
   const labels = ["Q1", "", "Q2", "", "Q3", "", "Q4", ""]; // like your shot
   // millions to match Y tick style
 
-    const purple = [10, 18, 14, 27, 22, 31, 38, 46].map(n => n * 1_000_000); // 46M peak
-    const yellow = [26, 30, 34, 29, 33, 31, 32, 37].map(n => n * 1_000_000); // stays < 40M
+    const purple = [10, 18, 14, 27, 22, 31, 50, 46].map(n => n * 1_000_000); // 46M peak
+    const yellow = [15, 23, 34, 29, 33, 31, 32, 37].map(n => n * 1_000_000); // stays < 40M
 
   const data = useMemo(() => {
     const gradientFill = (ctx) => {
