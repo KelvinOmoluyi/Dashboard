@@ -76,7 +76,7 @@ const Notifications = () => {
             </div>
         </div>
 
-      {/* Tabs */}
+
       <div className="flex items-center gap-2">
         {tabOrder.map((t) => (
           <button
@@ -103,7 +103,7 @@ const Notifications = () => {
         </div>
       </div>
 
-      {/* List */}
+
       <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-2">
         {Object.entries(grouped).map(([section, arr]) =>
           arr.length ? (
@@ -118,7 +118,7 @@ const Notifications = () => {
                     key={n.id}
                     className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.04] transition"
                   >
-                    {/* Unread dot */}
+
                     <span
                       className={
                         "mt-2 h-2 w-2 rounded-full " +
@@ -126,27 +126,29 @@ const Notifications = () => {
                       }
                     />
 
-                    {/* Icon bubble */}
+
                     <div className="shrink-0 h-9 w-9 rounded-xl flex items-center justify-center bg-white/5 border border-white/10">
                       <span className="text-lg">{typeIcon[n.type] || "🔔"}</span>
                     </div>
 
-                    {/* Main */}
+
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
                         <div className="truncate text-white/90">{n.title}</div>
                         <span
-                          className={
-                            "text-xxs px-2 py-0.5 rounded-full " +
+                        style={{ fontSize: "0.8rem", fontWeight: 500 }}
+                        className={
+                            "px-2 py-0.5 rounded-full " +
                             (priorityPill[n.priority] || "bg-white/5 text-white/50 border border-white/10")
-                          }
+                        }
                         >
                           {n.priority}
                         </span>
                         {n.cta?.label && (
                           <a
+                            style={{ fontSize: "0.8rem", fontWeight: 500 }}
                             href={n.cta.href}
-                            className="ml-1 text-xxs px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-200 border border-purple-500/20 hover:bg-purple-500/25"
+                            className="ml-1 px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-200 border border-purple-500/20 hover:bg-purple-500/25"
                           >
                             {n.cta.label}
                           </a>
@@ -161,12 +163,12 @@ const Notifications = () => {
                           })}
                         </span>
                       </div>
-                      <div className="mt-1 text-sm text-white/60 line-clamp-2">
-                        {n.message}
+                      <div className="mt-1 line-clamp-2">
+                        <p>{n.message}</p>
                       </div>
                     </div>
 
-                    {/* Row actions */}
+
                     <div className="flex gap-1">
                       <button
                         title="Mark as read"
