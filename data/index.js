@@ -224,6 +224,105 @@ export const transactions = [
   }
 ]
 
+// notifications.data.js
+export const notifications = [
+  {
+    id: "n1",
+    type: "system",              // system | billing | comment | mention | security | shipping
+    title: "Analytics job finished",
+    message: "Daily ingestion completed successfully (92,183 rows).",
+    time: "2025-08-21T10:45:00Z",
+    read: false,
+    priority: "low",             // low | medium | high
+    cta: { label: "View logs", href: "/jobs/342/logs" }
+  },
+  {
+    id: "n2",
+    type: "billing",
+    title: "Invoice #INV-2087 paid",
+    message: "Payment of $348.26 processed via ending ••42.",
+    time: "2025-08-21T09:02:00Z",
+    read: false,
+    priority: "low",
+    cta: { label: "Download", href: "/billing/invoices/INV-2087" }
+  },
+  {
+    id: "n3",
+    type: "mention",
+    title: "You were mentioned by @Lani",
+    message: "“Let’s ship the conversion card tweak behind a flag.”",
+    time: "2025-08-21T07:18:00Z",
+    read: true,
+    priority: "low",
+    cta: { label: "Open thread", href: "/projects/apexify/threads/91#c_553" }
+  },
+  {
+    id: "n4",
+    type: "comment",
+    title: "New comment on Session by Country",
+    message: "Grant: “Bar thickness feels heavy at 85%. Reduce to 70%?”",
+    time: "2025-08-20T18:30:00Z",
+    read: false,
+    priority: "medium",
+    cta: { label: "Review", href: "/dashboard/sessions/design" }
+  },
+  {
+    id: "n5",
+    type: "security",
+    title: "New sign‑in detected",
+    message: "Chrome on Windows · Lagos, NG · IP 102.89.14.210",
+    time: "2025-08-20T06:11:00Z",
+    read: true,
+    priority: "high",
+    cta: { label: "Secure account", href: "/security/sessions" }
+  },
+  {
+    id: "n6",
+    type: "shipping",
+    title: "Dataset export is ready",
+    message: "A CSV export of Transactions (Aug) is available.",
+    time: "2025-08-19T21:04:00Z",
+    read: true,
+    priority: "low",
+    cta: { label: "Download", href: "/exports/transactions-aug.csv" }
+  },
+  {
+    id: "n7",
+    type: "system",
+    title: "Pipeline warning: slow query",
+    message: "avg_exec_time increased to 1.8s on `sales_estimation_v3`.",
+    time: "2025-08-18T15:25:00Z",
+    read: false,
+    priority: "medium",
+    cta: { label: "Investigate", href: "/analytics/queries/sales_estimation_v3" }
+  },
+  {
+    id: "n8",
+    type: "billing",
+    title: "Usage nearing limit",
+    message: "You’ve used 83% of this month’s API quota.",
+    time: "2025-08-16T12:00:00Z",
+    read: true,
+    priority: "medium",
+    cta: { label: "View plan", href: "/billing/plan" }
+  }
+];
+
+export const typeIcon = {
+  system:  "🟣",
+  billing: "💳",
+  comment: "💬",
+  mention: "🔔",
+  security:"🔒",
+  shipping:"📦"
+};
+
+export const priorityPill = {
+  low:    "bg-purple-500/10 text-purple-300 border border-purple-500/20",
+  medium: "bg-yellow-500/10 text-yellow-300 border border-yellow-500/20",
+  high:   "bg-red-500/10 text-red-300 border border-red-500/20"
+};
+
 
 import logo from "./images/logo.png";
 import { picture } from 'framer-motion/client';
