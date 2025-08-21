@@ -6,6 +6,7 @@ import { Button, LineGraph, StatusIndicator } from "../components/index";
 import { BiDownload } from 'react-icons/bi';
 import { RiLoopLeftFill } from 'react-icons/ri';
 import { MdArrowDropDown } from 'react-icons/md';
+import { motion } from "framer-motion";
 
 
 const Overview = () => {
@@ -72,7 +73,12 @@ const Overview = () => {
                                         <p>{session.percentage}%</p>
                                     </div>
                                     <div className="w-full h-2 rounded-full mt-2 overflow-hidden bg-[#282829]">
-                                        <div className={`h-full w-[${session.percentage}%] bg-[#9061f6] rounded-full`}></div>
+                                        <motion.div 
+                                        initial={{ width: 0 }}
+                                        animate={{ width: session.percentage+"%"}}
+                                        transition={{ duration: session.percentage*0.025 }}
+                                        className={`h-full bg-[#9061f6] rounded-full`}
+                                        />
                                     </div>
                                 </div>
                             </li>
@@ -117,7 +123,14 @@ const Overview = () => {
                                     </div>
                                 </td>
                                 <td className="w-[16%]">
-                                    <Button textFirst={true} text="More" icon={MdArrowDropDown} bgColor="#282829" height={40} width={100} align="center" />
+                                    <Button 
+                                    textFirst={true} 
+                                    text="More" 
+                                    icon={MdArrowDropDown} 
+                                    bgColor="#282829" 
+                                    height={40} 
+                                    width={100} 
+                                    align="center" />
                                 </td>
                             </div>
                         </tr>
