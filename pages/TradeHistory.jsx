@@ -16,7 +16,7 @@ const TradeHistory = () => {
     })
 
     return (
-        <div className="w-full mt-4 bg-[#141415] p-4 rounded-[10px] content">
+        <div className="w-full mt-4 bg-[#141415] p-4 rounded-[10px] content overflow-x-scroll">
             <div className="w-full flex justify-between items-center flex-wrap gap-2 mb-2">
                 <h4>Transaction History</h4>
                 <div className="w-fit flex items-center gap-3">
