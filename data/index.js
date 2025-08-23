@@ -14,6 +14,7 @@ import japanFlag from "./images/JapanFlag.jpg"
 import koreaFlag from "./images/koreaFlag.webp"
 import germanyFlag from "./images/germanyFlag.png"
 import customerPic from "./images/my-pic.jpg"
+import logo from "./images/logo.png";
 
 export const sidebarData = [{
     properties: {
@@ -212,14 +213,25 @@ export const transactions = [
     picture: customerPic
   },
   {
-    "id": 8,
-    "product": "BTC",
-    "type": "Crypto",
-    "amount": "$64,120.55",
-    "date": "Mar 20, 2024",
-    "status": "Completed",
-    "customer": "Ali Hassan",
-    "email": "ali@example.com",
+    id: 8,
+    product: "BTC",
+    type: "Crypto",
+    amount: "$64,120.55",
+    date: "Mar 20, 2024",
+    status: "Completed",
+    customer: "Ali Hassan",
+    email: "ali@example.com",
+    picture: customerPic
+  },
+  {
+    id: 9,
+    product: "ETH",
+    type: "Crypto",
+    amount: "$14,120.55",
+    date: "May 10, 2024",
+    status: "Completed",
+    customer: "Abdul Hassan",
+    email: "hassan@example.com",
     picture: customerPic
   }
 ]
@@ -270,7 +282,7 @@ export const notifications = [
     id: "n5",
     type: "security",
     title: "New sign‑in detected",
-    message: "Chrome on Windows · Lagos, NG · IP 102.89.14.210",
+    message: "Chrome on Windows · Lagos, NG · IP 102.83.44.280",
     time: "2025-08-20T06:11:00Z",
     read: true,
     priority: "high",
@@ -324,6 +336,5 @@ export const priorityPill = {
 };
 
 
-import logo from "./images/logo.png";
-import { picture } from 'framer-motion/client';
+
 export { logo };

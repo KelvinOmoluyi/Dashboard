@@ -9,7 +9,7 @@ const SideBar = () => {
   const [enabled, setEnabled] = useState(true);
 
   return (
-    <div className='bg-[#141415] w-[240px] text-white flex flex-col gap-4 h-full p-2 pt-4 overflow-hidden rounded-[8px]'>
+    <div className='bg-[#141415] w-[240px] text-white flex flex-col gap-4 h-full p-2 pb-4 pt-4 overflow-scroll rounded-[8px]'>
       <div className='w-full min-h-[40px]'>
         <div className='h-full flex justify-between w-[110px] pl-2'>
           <img src={logo} alt="Logo" className='w-[30px] h-[25px]' />

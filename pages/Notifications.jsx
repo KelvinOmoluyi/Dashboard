@@ -57,27 +57,27 @@ const Notifications = () => {
     const grouped = groupByDay(items);
 
     return (
-        <div className="space-y-4">
+        <div className="h-full">
         {/* Header */}
-        <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-                <h2 className="text-lg font-semibold text-white">Notifications</h2>
-                <span className="text-xs px-2 py-0.5 rounded-lg bg-white/5 text-white/60 border border-white/10">
-                    {seed.filter(n => !n.read).length} unread
-                </span>
-                </div>
-                <div className="flex items-center gap-2">
-                <button className="px-3 py-1.5 rounded-lg bg-white/5 text-white/80 border border-white/10 hover:bg-white/10">
-                    Mark all as read
-                </button>
-                <button className="px-3 py-1.5 rounded-lg bg-white/5 text-white/60 border border-white/10 hover:bg-white/10">
-                    Settings
-                </button>
+        <div className="flex items-center justify-between flex-wrap content">
+          <div className="flex items-center gap-2 mb-2">
+              <h2 className="text-lg font-semibold text-white">Notifications</h2>
+              <span className="w-[70px] text-xs px-2 py-0.5 rounded-lg bg-white/5 text-white/60 border border-white/10">
+                  {seed.filter(n => !n.read).length} unread
+              </span>
             </div>
+            <div className="flex items-center gap-2">
+              <button className="w-[160px] py-1.5 rounded-lg bg-white/5 text-white/80 border border-white/10 hover:bg-white/10">
+                  Mark all as read
+              </button>
+              <button className="px-3 py-1.5 rounded-lg bg-white/5 text-white/60 border border-white/10 hover:bg-white/10">
+                  Settings
+              </button>
+          </div>
         </div>
 
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 flex-wrap mb-4 mt-2">
         {tabOrder.map((t) => (
           <button
             key={t}
@@ -116,7 +116,7 @@ const Notifications = () => {
                 {arr.map((n) => (
                   <li
                     key={n.id}
-                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.04] transition"
+                    className="flex items-start gap-3 p-3 rounded-lg hover:bg-white/[0.04] transition flex-wrap"
                   >
 
                     <span
@@ -127,67 +127,68 @@ const Notifications = () => {
                     />
 
 
-                    <div className="shrink-0 h-9 w-9 rounded-xl flex items-center justify-center bg-white/5 border border-white/10">
+                    <div className="shrink-0 h-9 w-9 rounded-xl bg-white/5 border border-white/10">
                       <span className="text-lg">{typeIcon[n.type] || "🔔"}</span>
                     </div>
 
-
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-2">
-                        <div className="truncate text-white/90">{n.title}</div>
-                        <span
-                        style={{ fontSize: "0.8rem", fontWeight: 500 }}
-                        className={
-                            "px-2 py-0.5 rounded-full " +
-                            (priorityPill[n.priority] || "bg-white/5 text-white/50 border border-white/10")
-                        }
-                        >
-                          {n.priority}
-                        </span>
-                        {n.cta?.label && (
-                          <a
-                            style={{ fontSize: "0.8rem", fontWeight: 500 }}
-                            href={n.cta.href}
-                            className="ml-1 px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-200 border border-purple-500/20 hover:bg-purple-500/25"
+                    <div className="flex-1 flex items-center flex-wrap justify-center notificationRow">
+                      <div className="min-w-[200px] flex-1 flex-wrap mr-3">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <div className=" text-white/90">{n.title}</div>
+                          <span
+                          style={{ fontSize: "0.8rem", fontWeight: 500 }}
+                          className={
+                              "px-2 py-0.5 rounded-full " +
+                              (priorityPill[n.priority] || "bg-white/5 text-white/50 border border-white/10")
+                          }
                           >
-                            {n.cta.label}
-                          </a>
-                        )}
-                        <span className="ml-auto text-xs text-white/40">
-                          {new Date(n.time).toLocaleString(undefined, {
-                            hour: "2-digit",
-                            minute: "2-digit",
-                            hour12: true,
-                            month: "short",
-                            day: "2-digit"
-                          })}
-                        </span>
+                            {n.priority}
+                          </span>
+                          {n.cta?.label && (
+                            <a
+                              style={{ fontSize: "0.8rem", fontWeight: 500 }}
+                              href={n.cta.href}
+                              className="ml-1 px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-200 border border-purple-500/20 hover:bg-purple-500/25"
+                            >
+                              {n.cta.label}
+                            </a>
+                          )}
+                          <span className="ml-auto text-xs text-white/40">
+                            {new Date(n.time).toLocaleString(undefined, {
+                              hour: "2-digit",
+                              minute: "2-digit",
+                              hour12: true,
+                              month: "short",
+                              day: "2-digit"
+                            })}
+                          </span>
+                        </div>
+                        <div className="mt-1 line-clamp-2">
+                          <p>{n.message}</p>
+                        </div>
                       </div>
-                      <div className="mt-1 line-clamp-2">
-                        <p>{n.message}</p>
-                      </div>
-                    </div>
 
 
-                    <div className="flex gap-1">
-                      <button
-                        title="Mark as read"
-                        className="h-8 w-8 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:bg-white/10"
-                      >
-                        ✓
-                      </button>
-                      <button
-                        title="Pin"
-                        className="h-8 w-8 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:bg-white/10"
-                      >
-                        📌
-                      </button>
-                      <button
-                        title="Delete"
-                        className="h-8 w-8 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:bg-white/10"
-                      >
-                        ✕
-                      </button>
+                      <div className="flex gap-1 min-w-[100px]">
+                        <button
+                          title="Mark as read"
+                          className="h-8 w-8 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:bg-white/10"
+                        >
+                          ✓
+                        </button>
+                        <button
+                          title="Pin"
+                          className="h-8 w-8 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:bg-white/10"
+                        >
+                          📌
+                        </button>
+                        <button
+                          title="Delete"
+                          className="h-8 w-8 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:bg-white/10"
+                        >
+                          ✕
+                        </button>
+                      </div>
                     </div>
                   </li>
                 ))}

@@ -17,8 +17,8 @@ const Overview = () => {
     })
 
     return (
-        <div className="w-full h-full overflow-hidden pb-4">
-            <div className="w-full grid grid-cols-4 gap-5">
+        <div className="w-full h-full overflow-hidden pb-4 content">
+            <div className="w-full grid dashboardStats">
                 {dashboardStats.map((dashboardStat) => (
                     <div key={dashboardStat.id} className="w-[100%] h-60 bg-[#141415] border-1 border-gray-800 rounded-[10px] p-4 hover:bg-gradient-to-b from-[#9061f6] to-[#141415] transition-all transition-2">
                         <div className="w-full h-full flex flex-col justify-between">
@@ -43,8 +43,8 @@ const Overview = () => {
                 ))}
             </div>
 
-            <div className="w-full mt-4 flex justify-between gap-4">
-                <div className="h-[26rem] w-[58%] bg-[#141415] p-4 rounded-[10px]">
+            <div className="w-full mt-4 flex justify-between gap-4 chartContainer">
+                <div className="h-[26rem] w-[58%] bg-[#141415] p-4 rounded-[10px] chart">
                     <div className="w-full flex justify-between mb-2">
                         <h4>Analytics</h4>
                         <div className="flex gap-3">
@@ -56,7 +56,7 @@ const Overview = () => {
                     </div>
                     <LineGraph />
                 </div>
-                <div className="h-[26rem] w-[41%] bg-[#141415] p-4 rounded-[10px]">
+                <div className="h-[26rem] w-[41%] bg-[#141415] p-4 rounded-[10px] countrySession">
                     <div className="w-full flex justify-between mb-2">
                         <h4>Session by country</h4>
                         <BsThreeDots size={25} color="#ececec" />
@@ -88,7 +88,7 @@ const Overview = () => {
             </div>
 
             <div className="w-full mt-4 bg-[#141415] p-4 rounded-[10px]">
-                <div className="w-full flex justify-between items-center mb-2">
+                <div className="w-full flex justify-between items-center flex-wrap gap-2 mb-2">
                     <h4>Transaction History</h4>
                     <div className="w-fit flex items-center gap-3">
                         <Button text="Download" icon={BiDownload} width={140} height={40} bgColor="#282829" />
@@ -96,10 +96,10 @@ const Overview = () => {
                             <BsThreeDots size={25} color="#ececec" />
                     </div>
                 </div>
-                <table className="w-full">
+                <table className="w-full overflow-x-scroll">
                     <tr className="w-full h-[3rem] bg-[#282829] rounded-md flex items-center justify-between px-4 mt-4">
-                        <td className="w-[40%]"><p>Product name</p></td>
-                        <div className="w-[60%] flex items-center">
+                        <td className="w-[40%] min-w-[120px]"><p>Product name</p></td>
+                        <div className="w-[60%] min-w-[720px] flex items-center">
                             <td className="w-[20%]"><p>Order amount</p></td>
                             <td className="w-[18%]"><p>Date</p></td>
                             <td className="w-[18%]"><p>Status</p></td>
@@ -109,7 +109,7 @@ const Overview = () => {
                     {transactions.map((transaction) => (
                         <tr key={transaction.id} className="w-full h-[4rem] border-[#282829] bg-bottom-1 rounded-md flex items-center justify-between px-4 mt-4">
                             <td className="w-[40%]"><p>{transaction.product}</p></td>
-                            <div className="w-[60%] flex items-center">
+                            <tbody className="w-[60%] min-w-[720px] flex items-center">
                                 <td className="w-[20%]"><p>{transaction.amount}</p></td>
                                 <td className="w-[18%]"><p>{transaction.date}</p></td>
                                 <td className="w-[20%]">
@@ -117,10 +117,10 @@ const Overview = () => {
                                 </td>
                                 <td className="w-[38%] flex gap-4">
                                     <img src={transaction.picture} alt="customer picture" style={{ height: "3rem", aspectRatio: "1/1", borderRadius: "50%" }} />
-                                    <div>
+                                    <tbody>
                                         <p>{transaction.customer}</p>
                                         <h6>{transaction.email}</h6>
-                                    </div>
+                                    </tbody>
                                 </td>
                                 <td className="w-[16%]">
                                     <Button 
@@ -132,7 +132,7 @@ const Overview = () => {
                                     width={100} 
                                     align="center" />
                                 </td>
-                            </div>
+                            </tbody>
                         </tr>
                     ))}
                 </table>
